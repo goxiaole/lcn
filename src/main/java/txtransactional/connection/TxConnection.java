@@ -1,5 +1,7 @@
 package txtransactional.connection;
 
+import txtransactional.annotation.TxTransaction;
+
 import java.sql.*;
 import java.util.Map;
 import java.util.Properties;
@@ -9,16 +11,20 @@ public class TxConnection implements Connection {
 
     private Connection connection;
 
-    public void commit() throws SQLException {
+    public TxConnection(Connection connection){
+        this.connection=connection;
+    }
 
+    public void commit() throws SQLException {
+        System.out.println("commit....");
     }
 
     public void rollback() throws SQLException {
-
+        System.out.println("rollback....");
     }
 
     public void close() throws SQLException {
-
+        connection.close();
     }
 
     public Statement createStatement() throws SQLException {
