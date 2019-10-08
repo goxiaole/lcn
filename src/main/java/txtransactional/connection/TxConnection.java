@@ -128,7 +128,7 @@ public class TxConnection implements Connection {
     }
 
     public void releaseSavepoint(Savepoint savepoint) throws SQLException {
-        connection.releaseSavepoint(savepoint)
+        connection.releaseSavepoint(savepoint);
     }
 
     public Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability) throws SQLException {
