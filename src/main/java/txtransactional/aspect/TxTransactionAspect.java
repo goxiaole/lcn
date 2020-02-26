@@ -21,7 +21,7 @@ public class TxTransactionAspect implements Ordered {
         System.out.println(txTransaction.isStart());
         try {
             //进入spring 方法的业务逻辑
-            point.proceed();
+            point.proceed(); asd
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
